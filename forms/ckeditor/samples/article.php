@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <?php
-$host = 'bananasplit.db.8568849.hostedresource.com';
-$user = 'bananasplit';
+$host = 'bananasplit2.db.8568849.hostedresource.com';
+$user = 'bananasplit2';
 $pass = 'Oranges234!';
-$db = 'bananasplit';
+$db = 'bananasplit2';
 
 
 //Connecting to your database
@@ -13,7 +13,7 @@ echo "error connecting, try again later.";
 }
 mysql_select_db($db);
 mysql_set_charset('utf8', $link);
-$sql1 = "SELECT * FROM bananasplit.recipes where id=1";
+$sql1 = "SELECT * FROM bananasplit2.recipes where id=1";
 $result1 = mysql_query($sql1,$link);
 $row1 = mysql_fetch_assoc($result1);
 
@@ -35,9 +35,9 @@ $row1 = mysql_fetch_assoc($result1);
 </head>
 <body>
 <div class="container">
-	<h2><label for="editor1">Recipe Layout Editor</label></h2>
+	<h2><label for="editor1">Recipe Editor</label></h2>
 	
-	<form id="recipe-form" action="./recipe.php" accept-charset="utf-8">
+	<form id="recipe-form" action="./recipe.php" accept-charset="utf-8" method="post">
 	<textarea id="editor1" name="recipe">
 	<?php echo $row1['recipe']; ?>
 
